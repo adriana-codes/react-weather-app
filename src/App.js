@@ -10,6 +10,7 @@ function App() {
       <main>
         {" "}
         <Weather city="Barcelona" />
+        <br />
       </main>
 
       <footer>
