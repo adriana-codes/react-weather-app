@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Weather from "./Weather";
 
@@ -5,22 +6,14 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <header>
-          <h1>React Weather App - Homework</h1>
-        </header>
-        <main>
-          {" "}
-          <Weather city="Barcelona" />
-          <br />
-        </main>
-
+        <Weather defaultCity="Barcelona" />
         <footer>
           <a
             href="https://github.com/adriana-codes/react-weather-app"
             target="_blank"
             rel="noreferrer"
           >
-            Open sourced
+            Open source
           </a>{" "}
           project by{" "}
           <a
