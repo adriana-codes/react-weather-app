@@ -9,10 +9,11 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleCity(response) {
-    console.log(response.data.condition.icon_url);
+    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.temperature.current),
+      sensation: Math.round(response.data.temperature.feels_like),
       description: response.data.condition.description,
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.temperature.humidity,
