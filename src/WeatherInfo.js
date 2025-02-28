@@ -13,10 +13,7 @@ export default function WeatherInfo(props) {
       </ul>
       <div className="row mt-3">
         <div className="col-6">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-            alt="{props.data.description}"
-          />
+          <img src={props.data.icon} alt={props.data.description} />
           <span className="temperature">{props.data.temperature}</span>
           <span className="unit">ºC</span>
         </div>

@@ -6,8 +6,10 @@ import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleCity(response) {
+    console.log(response.data.condition.icon_url);
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.temperature.current),
@@ -16,14 +18,29 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       city: response.data.city,
       date: new Date(response.data.time * 1000),
-      iconUrl: response.data.condition.icon_url,
+      icon: response.data.condition.icon_url,
     });
+  }
+
+  function search() {
+    const apiKey = "0be192793f55aa475o5602t2cabd6e24";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleCity);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleUpdate(event) {
+    setCity(event.target.value);
   }
 
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -31,6 +48,7 @@ export default function Weather(props) {
                 placeholder="Enter a city..."
                 className="form-input"
                 autoFocus="on"
+                onChange={handleUpdate}
               />
             </div>
             <div className="col-3 p-0">
@@ -46,10 +64,7 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "0be192793f55aa475o5602t2cabd6e24";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleCity);
-
+    search();
     return "Loading...";
   }
 }
