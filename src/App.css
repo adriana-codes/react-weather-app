@@ -1,6 +1,7 @@
 .App {
   margin: 0 auto;
   max-width: 600px;
+  font-family: "Questrial", serif;
 }
 
 .App footer a {
