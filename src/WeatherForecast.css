@@ -1,5 +1,6 @@
 .WeatherForecast {
   text-align: center;
+  padding: 15px;
 }
 
 .Temp-max {
