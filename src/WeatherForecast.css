@@ -1,6 +1,5 @@
 .WeatherForecast {
   text-align: center;
-  padding: 10px;
 }
 
 .Temp-max {
@@ -10,4 +9,15 @@
 .Temp-min {
   opacity: 0.6;
   margin-left: 5px;
+}
+
+@media (max-width: 499px) {
+  .WeatherForecast {
+    padding: 0;
+    font-size: 0.8em;
+  }
+  .WeatherForecast img {
+    height: 50px;
+    width: 50px;
+  }
 }

@@ -84,3 +84,32 @@
 .Weather .weather-description {
   font-size: 1.2em;
 }
+
+@media (max-width: 499px) {
+  .Weather h1 {
+    font-size: 2.5em;
+  }
+
+  .Weather .weather-data {
+    font-size: 0.8em;
+  }
+
+  .Weather .weather-data-img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .Weather .temperature {
+    font-size: 2.6em;
+    line-height: 60px;
+  }
+
+  .Weather .unit {
+    font-size: 0.8em;
+    top: -17px;
+  }
+
+  .Weather .weather-description {
+    font-size: 0.8em;
+  }
+}
