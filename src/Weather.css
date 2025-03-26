@@ -3,9 +3,14 @@
   margin: 30px auto;
   max-width: 600px;
   border-radius: 9px;
-  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
-  box-shadow: 0px 6px 10px -3px rgba(0, 0, 0, 0.75);
-  color: rgba(166, 163, 184, 0.988);
+  /*background: linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%); */
+  background: linear-gradient(
+    179.4deg,
+    rgb(253, 240, 233) 2.2%,
+    rgb(255, 194, 203) 96.2%
+  );
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 10px 0px;
+  color: rgba(162, 158, 187, 0.988);
 }
 
 .Weather h1 {
